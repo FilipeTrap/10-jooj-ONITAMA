@@ -8,15 +8,19 @@ body {
 }
 
 .container {
-    width: 500px;
-    height: 500px;
+   
     display: flex;
     flex-wrap: wrap;
-    position: absolute;
+    position: relative;
     border: 2px solid #333;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     background-color: #fff;
+}
+
+#board{
+     width: 450px;
+    height: 450px;
 }
 
 .square {
@@ -43,4 +47,67 @@ body {
 
 .square button:hover {
     background-color: #0056b3;
+}
+
+.cards {
+ 
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    background-color: #e0e0e0;
+    outline: 2px solid black; /* Adiciona contorno preto */
+  
+}
+
+.row{
+    display: flex;
+    gap: 10px; /* Espaçamento opcional entre os elementos */
+}
+
+#cardsPlayer1-1 {
+    width: 200px;
+    height: 100px;
+    /* position: absolute;
+    top: 2%;
+    left: 5%;  */
+}
+#cardsPlayer1-2 {
+    width: 200px;
+    height: 100px; 
+    /* position: absolute;
+    top: 24%;
+    left: 5%;  */
+}
+
+#cardsPlayer2-1 {
+    width: 200px;
+    height: 100px;
+    /* position: absolute;
+    bottom: 2%;
+    left: 5%; */
+   
+}
+#cardsPlayer2-2 {
+    width: 200px;
+    height: 100px; 
+    /* position: absolute;
+    bottom: 24%;
+    left: 5%; */
+   
+}
+
+#cardSolto {
+    width: 200px;
+    height: 100px; 
+    
+    top: 150px;
+    position: relative;
+    
+}
+
+.imagem {
+    width: 100%;
+    height: auto;
 }
