@@ -8,17 +8,18 @@ body {
 }
 
 .container {
-   
+    background-image: url('./assets/tabuleiro.png'); 
     display: flex;
     flex-wrap: wrap;
     position: relative;
     border: 2px solid #333;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    background-color: #fff;
+    /* background-color: #fff; */
 }
 
 #board{
+    
      width: 450px;
     height: 450px;
 }
@@ -31,6 +32,7 @@ body {
     align-items: center;
     box-sizing: border-box;
     border: 1px solid #ddd;
+    z-index: 2;
 }
 
 .square button {
@@ -38,16 +40,16 @@ body {
     height: 80%;
     border: none;
     border-radius: 5px;
-    background-color: #007bff;
-    color: white;
+    background-color: transparent;
+    /* color: white; */
     font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    /* transition: background-color 0.3s ease; */
 }
 
-.square button:hover {
-    background-color: #0056b3;
-}
+/* .square button:hover {
+    background-color: #093c72;
+} */
 
 .cards {
  
@@ -111,3 +113,79 @@ body {
     width: 100%;
     height: auto;
 }
+
+#a1{
+position: absolute;
+width: 100px;
+height: 100px; 
+top: 357px;
+left: -5px;
+}
+
+#a2{
+position: absolute;
+width: 100px;
+height: 100px; 
+top: 357px;
+left: 85px;
+}
+#as{
+    position: absolute;
+    width: 100px;
+    height: 100px; 
+    top: 357px;
+    left: 176px;
+    }
+#a3{
+position: absolute;
+width: 100px;
+height: 100px; 
+top: 357px;
+left: 266px;
+}
+#a4{
+position: absolute;
+width: 100px;
+height: 100px; 
+top: 357px;
+left: 353px;
+}
+
+/* --------------------------------- */
+#v1{
+    position: absolute;
+    width: 100px;
+    height: 100px; 
+    top: -2px;
+    left: -5px;
+    }
+    
+    #v2{
+    position: absolute;
+    width: 100px;
+    height: 100px; 
+    top: -2px;
+    left: 85px;
+    }
+    #vs{
+        position: absolute;
+        width: 100px;
+        height: 100px; 
+        top: -2px;
+        left: 176px;
+        }
+        
+    #v3{
+    position: absolute;
+    width: 100px;
+    height: 100px; 
+    top: -2px;
+    left: 266px;
+    }
+    #v4{
+    position: absolute;
+    width: 100px;
+    height: 100px; 
+    top: -2px;
+    left: 353px;
+    }

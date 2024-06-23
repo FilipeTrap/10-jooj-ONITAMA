@@ -7,6 +7,12 @@
 </head>
 <body>
 
+    <button onclick="atualizarTabuleiro()">atualizarTabuleiro</button>
+    <button onclick="botoesPecas('a')">botoesPecas</button>
+    <button>teste3</button>
+    <button>teste4</button>
+    <button>teste5</button>
+
 
 
 
@@ -23,31 +29,45 @@
    
     <div class="row">
     <div id="board" class="container">
-        <div class="square" id="bt0"><button></button></div>
-        <div class="square" id="bt1"><button></button></div>
-        <div class="square" id="bt2"><button></button></div>
-        <div class="square" id="bt3"><button></button></div>
-        <div class="square" id="bt4"><button></button></div>
-        <div class="square" id="bt5"><button></button></div>
-        <div class="square" id="bt4"><button></button></div>
-        <div class="square" id="bt6"><button></button></div>
-        <div class="square" id="bt7"><button></button></div>
-        <div class="square" id="bt8"><button></button></div>
-        <div class="square" id="bt9"><button></button></div>
-        <div class="square" id="bt10"><button></button></div>
-        <div class="square" id="bt11"><button></button></div>
-        <div class="square" id="bt12"><button></button></div>
-        <div class="square" id="bt13"><button></button></div>
-        <div class="square" id="bt14"><button></button></div>
-        <div class="square" id="bt15"><button></button></div>
-        <div class="square" id="bt16"><button></button></div>
-        <div class="square" id="bt17"><button></button></div>
-        <div class="square" id="bt18"><button></button></div>
-        <div class="square" id="bt19"><button></button></div>
-        <div class="square" id="bt20"><button></button></div>
-        <div class="square" id="bt21"><button></button></div>
-        <div class="square" id="bt22"><button></button></div>
-        <div class="square" id="bt23"><button></button></div>
+        <div class="square" id="bt0" style="visibility: visible;"><button onclick="botao(-12)"></button></div>
+        <div class="square" id="bt1" style="visibility: visible;"><button onclick="botao(-11)"></button></div>
+        <div class="square" id="bt2" style="visibility: visible;"><button onclick="botao(-10)"></button></div>
+        <div class="square" id="bt3" style="visibility: visible;"><button onclick="botao(-9)"></button></div>
+        <div class="square" id="bt4" style="visibility: visible;"><button onclick="botao(-8)"></button></div>
+        <div class="square" id="bt5" style="visibility: visible;"><button onclick="botao(-7)"></button></div>
+        <div class="square" id="bt6" style="visibility: visible;"><button onclick="botao(-6)"></button></div>
+        <div class="square" id="bt7" style="visibility: visible;"><button onclick="botao(-5)"></button></div>
+        <div class="square" id="bt8" style="visibility: visible;"><button onclick="botao(-4)"></button></div>
+        <div class="square" id="bt9" style="visibility: visible;"><button onclick="botao(-3)"></button></div>
+        <div class="square" id="bt10" style="visibility: visible;"><button onclick="botao(-2)"></button></div>
+        <div class="square" id="bt11" style="visibility: visible;"><button onclick="botao(-1)"></button></div>
+        <div class="square" id="bt12" style="visibility: visible;"><button onclick="botao(0)"></button></div>
+        <div class="square" id="bt13" style="visibility: visible;"><button onclick="botao(+1)"></button></div>
+        <div class="square" id="bt14" style="visibility: visible;"><button onclick="botao(+2)"></button></div>
+        <div class="square" id="bt15" style="visibility: visible;"><button onclick="botao(+3)"></button></div>
+        <div class="square" id="bt16" style="visibility: visible;"><button onclick="botao(+4)"></button></div>
+        <div class="square" id="bt17" style="visibility: visible;"><button onclick="botao(+5)"></button></div>
+        <div class="square" id="bt18" style="visibility: visible;"><button onclick="botao(+6)"></button></div>
+        <div class="square" id="bt19" style="visibility: visible;"><button onclick="botao(+7)"></button></div>
+        <div class="square" id="bt20" style="visibility: visible;"><button onclick="botao(+8)"></button></div>
+        <div class="square" id="bt21" style="visibility: visible;"><button onclick="botao(+9)"></button></div>
+        <div class="square" id="bt22" style="visibility: visible;"><button onclick="botao(+10)"></button></div>
+        <div class="square" id="bt23" style="visibility: visible;"><button onclick="botao(+11)"></button></div>
+        <div class="square" id="bt24" style="visibility: visible;"><button onclick="botao(+12)"></button></div>
+    
+        
+        <img id="a1" src="assets/piaoAzul.png" alt="">
+        <img id="a2" src="assets/piaoAzul.png" alt="">
+        <img id="as" src="assets/sabioAzul.png" alt="">
+        <img id="a3" src="assets/piaoAzul.png" alt="">
+        <img id="a4" src="assets/piaoAzul.png" alt="">
+
+        <img id="v1" src="assets/piaoVermelho.png" alt="">
+        <img id="v2" src="assets/piaoVermelho.png" alt="">
+        <img id="vs" src="assets/sabioVermelho.png" alt="">
+        <img id="v3" src="assets/piaoVermelho.png" alt="">
+        <img id="v4" src="assets/piaoVermelho.png" alt="">
+        
     </div>
     <div class="cards" id="cardSolto">
         <img class="imagem" src="assets/bear.png" alt="">
@@ -56,7 +76,7 @@
 
     <div class="row">
         <div class="cards" id="cardsPlayer1-1">
-            <img class="imagem" src="assets/iguana.png" alt="">
+            <img class="imagem" src="assets/iguana.png" alt="" onclick="cardiguana()">
         </div>
         <div class="cards" id="cardsPlayer1-2">
             <img class="imagem" src="assets/giraffe.png" alt="">
@@ -65,11 +85,8 @@
    
 </div>
 
-    
-    <!-- <div class="cards" id="cardsPlayer2-1">
-    </div>
-    <div class="cards" id="cardsPlayer2-2">
-    </div> -->
+
+
 
 
 </body>
