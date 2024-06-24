@@ -376,31 +376,33 @@ function voltar(){
     // document.getElementById('cardsPlayer2-1-button').disabled = true;
     // document.getElementById('cardsPlayer2-2-button').disabled = true;
     // if(jogadoratual = 1){
-        document.getElementById('cardsPlayer1-1-button').disabled = false;
-        document.getElementById('cardsPlayer1-2-button').disabled = false;
+    //     document.getElementById('cardsPlayer1-1-button').disabled = false;
+    //     document.getElementById('cardsPlayer1-2-button').disabled = false;
      
     // }
     // if (jogadoratual = 2){
-        document.getElementById('cardsPlayer2-1-button').disabled = false;
-        document.getElementById('cardsPlayer2-2-button').disabled = false;
+    //     document.getElementById('cardsPlayer2-1-button').disabled = false;
+    //     document.getElementById('cardsPlayer2-2-button').disabled = false;
         
     // }
+    turnos();
     ocultarbotoes();
     
 }
 
-let rodada = 0;
+
 function turnos(){
     
 
-    atualizarTabuleiro();
-   ocultarbotoes();
+    
 
-    jogadoratual++;
+    
     if(jogadoratual>2){
         jogadoratual = 1;
         jogadorInimigo = 2;
     }
+    atualizarTabuleiro();
+   ocultarbotoes();
 
     console.error("jogador atual na função turnos "+jogadoratual);
 document.getElementById('cardsPlayer1-1-button').disabled = true;
@@ -548,6 +550,7 @@ function movimento(L1,L2,MoveX,MoveY){
     tabuleiro[L1][L2] = destino;
     atualizarTabuleiro();
     //voltar();
+    jogadoratual++;
     turnos();
     
     console.log("movimento final realizado")
@@ -568,11 +571,13 @@ function captura(L1,L2,MoveX,MoveY){
     //voltar();
     console.log("captura realizada")
     document.getElementById('btnVoltar').disabled = true;
+    jogadoratual++;
     turnos();
 
 }
 
 
 document.addEventListener('DOMContentLoaded', function() {
+    jogadoratual++;
     turnos();
 });
