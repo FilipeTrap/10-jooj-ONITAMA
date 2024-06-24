@@ -21,16 +21,6 @@ Este é um projeto de um jogo de tabuleiro desenvolvido em HTML, CSS e JavaScrip
 1. [[Manual do jogo para consultar as regras.]](https://www.arcanewonders.com/wp-content/uploads/2021/05/Onitama-Rulebook.pdf)
 
 
-## Estrutura do Projeto
-
-```plaintext
-nome-do-repositorio/
-├── assets/
-├── index.html
-├── script.js
-├──styles.css
-└── README.md
-
 ## Direitos Autorais
 
 Este projeto é desenvolvido apenas para fins educacionais e de aprendizado. O jogo e seu código-fonte são totalmente gratuitos e disponíveis para uso não comercial. Qualquer semelhança com outros jogos é puramente coincidência e este projeto não visa lucro ou comercialização.
