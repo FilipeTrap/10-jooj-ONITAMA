@@ -4,7 +4,8 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #f0f0f0;
+    background-color: #ffffff;
+    transition: background-color 0.5s ease;
 }
 
 .container {
@@ -114,7 +115,7 @@ body {
     height: auto;
 }
 
-#a1{
+#p11{
 position: absolute;
 width: 100px;
 height: 100px; 
@@ -122,28 +123,28 @@ top: 357px;
 left: -5px;
 }
 
-#a2{
+#p12{
 position: absolute;
 width: 100px;
 height: 100px; 
 top: 357px;
 left: 85px;
 }
-#as{
+#p15{
     position: absolute;
     width: 100px;
     height: 100px; 
     top: 357px;
     left: 176px;
     }
-#a3{
+#p13{
 position: absolute;
 width: 100px;
 height: 100px; 
 top: 357px;
 left: 266px;
 }
-#a4{
+#p14{
 position: absolute;
 width: 100px;
 height: 100px; 
@@ -152,7 +153,7 @@ left: 353px;
 }
 
 /* --------------------------------- */
-#v1{
+#p21{
     position: absolute;
     width: 100px;
     height: 100px; 
@@ -160,14 +161,14 @@ left: 353px;
     left: -5px;
     }
     
-    #v2{
+    #p22{
     position: absolute;
     width: 100px;
     height: 100px; 
     top: -2px;
     left: 85px;
     }
-    #vs{
+    #p25{
         position: absolute;
         width: 100px;
         height: 100px; 
@@ -175,17 +176,26 @@ left: 353px;
         left: 176px;
         }
         
-    #v3{
+    #p23{
     position: absolute;
     width: 100px;
     height: 100px; 
     top: -2px;
     left: 266px;
     }
-    #v4{
+    #p24{
     position: absolute;
     width: 100px;
     height: 100px; 
     top: -2px;
     left: 353px;
     }
+
+    #sombraAzul{
+        position: absolute;
+        width: 100px;
+        height: 100px; 
+        top: -2px;
+        left: 353px;
+        }
+    
