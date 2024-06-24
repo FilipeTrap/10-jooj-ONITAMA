@@ -249,8 +249,12 @@ for (let i = 0; i < tabuleiro.length; i++) {
             //console.log("tabuleiro " + tabuleiro[i][j] + " na posição " + i + j);
             
             if (elemento) {
+               
                 elemento.style.top = posiT[i][j] + 'px';
                 elemento.style.left = posiL[i][j] + 'px';
+                elemento.style.transition = 'left 0.5s ease, top 0.5s ease';
+
+               
             } else {
                 console.error("Elemento " + tabuleiro[i][j] + " não encontrado.");
             }

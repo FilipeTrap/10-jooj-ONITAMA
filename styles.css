@@ -6,6 +6,7 @@ body {
     margin: 0;
     background-color: #ffffff;
     transition: background-color 0.5s ease;
+    overflow: hidden;
 }
 
 .container {
@@ -16,7 +17,7 @@ body {
     border: 2px solid #333;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    /* background-color: #fff; */
+  
 }
 
 #board{
@@ -105,7 +106,7 @@ body {
 #cardSolto {
     width: 200px;
     height: 100px; 
-    
+    left: -63px;
     top: 150px;
     position: relative;
     transform: rotate(90deg);
@@ -123,6 +124,7 @@ width: 100px;
 height: 100px; 
 top: 357px;
 left: -5px;
+transition: all 0.3s ease;
 }
 
 #p12{
@@ -131,6 +133,7 @@ width: 100px;
 height: 100px; 
 top: 357px;
 left: 85px;
+transition: all 0.3s ease;
 }
 #p15{
     position: absolute;
@@ -145,6 +148,7 @@ width: 100px;
 height: 100px; 
 top: 357px;
 left: 266px;
+transition: all 0.3s ease;
 }
 #p14{
 position: absolute;
@@ -152,6 +156,7 @@ width: 100px;
 height: 100px; 
 top: 357px;
 left: 353px;
+transition: all 0.3s ease;
 }
 
 /* --------------------------------- */
@@ -161,6 +166,7 @@ left: 353px;
     height: 100px; 
     top: -2px;
     left: -5px;
+    transition: all 0.3s ease;
     }
     
     #p22{
@@ -169,6 +175,7 @@ left: 353px;
     height: 100px; 
     top: -2px;
     left: 85px;
+    transition: all 0.3s ease;
     }
     #p25{
         position: absolute;
@@ -176,6 +183,7 @@ left: 353px;
         height: 100px; 
         top: -2px;
         left: 176px;
+        transition: all 0.3s ease;
         }
         
     #p23{
@@ -184,6 +192,7 @@ left: 353px;
     height: 100px; 
     top: -2px;
     left: 266px;
+    transition: all 0.3s ease;
     }
     #p24{
     position: absolute;
@@ -191,6 +200,7 @@ left: 353px;
     height: 100px; 
     top: -2px;
     left: 353px;
+    transition: all 0.3s ease;
     }
 
     #sombraAzul{
