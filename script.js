@@ -2,8 +2,9 @@
 
 
 let jogadoratual = 2;
+let jogadorInimigo = 1;
 let cardjogado = '';
-let carta1player1 = 'bear';
+let carta1player1 = 'horse';
 let carta2player1 = 'dragon';
 let carta1player2 = 'boar';
 let carta2player2 = 'horse';
@@ -38,11 +39,11 @@ const posiL = [
 // ];
 
 let tabuleiro = [
-    [21, 22, 25, 23, 24],
-    [0, 0, 0, 0, 0],
+    [21, 22, 0, 23, 24],
+    [0, 0, 25, 0, 0],
     [0, 0, 15, 0, 0],
-    [0, 0, 0, 0, 0],
-    [11, 12, 0, 13, 14]
+    [0, 12, 0, 13, 0],
+    [11, 0, 0, 0, 14]
   ];
 
   let testematriz = [
@@ -84,7 +85,7 @@ let tabuleiro = [
     sable: [[-1,1], [0,-2],[1,-1], [0]],
     seasnake: [[0,2],[1,-1], [-1,0], [0]],
     tanuki: [[1,-1], [-1,2], [-1,0], [0]],
-    tiger: [[1,0], [0,-1], [0], [0], [0]],
+    tiger: [[1,0], [-2,0], [0], [0], [0]],
     tortle: [[0,2],[1,1], [0,-2],[1,-1]],
     viper: [[1,1], [0,-2], [-1,0], [0], [0]]
 };
@@ -213,6 +214,8 @@ function ocultarbotoes(){
         let elemento = document.getElementById("bt"+i+j);
             if (elemento) {
                 elemento.style.visibility='hidden';
+                elemento.classList.remove('red-gradient');
+                elemento.classList.remove('blue-gradient');
             } else {
                 console.error("Elemento " + "bt"+i+ " não encontrado.");
             }
@@ -227,10 +230,10 @@ function ocultarbotoes(){
 let coordArray = [];
 
 function botao(x, y) {
-    console.log(this.id);
+   // console.log(this.id);
         coordArray.push([x, y]);
     
-    console.log(JSON.stringify(coordArray.map(coords => coords.reverse()).reverse()));
+   // console.log(JSON.stringify(coordArray.map(coords => coords.reverse()).reverse()));
 }
 
 
@@ -254,29 +257,53 @@ function jogada(){
 
 
 function atualizarTabuleiro() {
-    console.log("tabuleiro atualizado");
-    for (let i = 0; i < tabuleiro.length; i++) {
-        for (let j = 0; j < tabuleiro[1].length; j++) {
+  
+    //console.log("tabuleiro atualizado");
+
+    let sabioAzulMorto = false;
+    let sabioVermelhoMorto = false;
+
+for (let i = 0; i < tabuleiro.length; i++) {
+    for (let j = 0; j < tabuleiro[i].length; j++) {
+        if (tabuleiro[i][j] == 15) {
+            sabioAzulMorto = true;
+        }
+        if (tabuleiro[i][j] == 25) {
+            sabioVermelhoMorto = true;
+        }
+
+        if(tabuleiro[0][2] == 15){
+            console.error("Sabio Azul chegou no templo vermelho.");
+            document.getElementById("blueWinTemplo").style.visibility='visible';
+        }
+        if(tabuleiro[4][2] == 25){
+            console.error("Sabio vermelho chegou no templo azul.");
+            document.getElementById("redWinTemplo").style.visibility='visible';
+        }
 
 
-            if (tabuleiro[i][j] != 0) {
-                // console.log(tabuleiro[i] + " " + i);
-                // console.log("posição top " + posiT[i] + " posição left " + posiL[i]);
-    
-                let elemento = document.getElementById("p"+tabuleiro[i][j]);
-                console.log("tabuleiro "+tabuleiro[i][j]+" na posição"+i + j)
-                //console.log("elemento "+elemento.id)
-                if (elemento) {
-                    elemento.style.top = posiT[i][j] + 'px';
-                    elemento.style.left = posiL[i][j] + 'px';
-                } else {
-                    console.error("Elemento " + tabuleiro[i] + " não encontrado.");
-                }
+        if (tabuleiro[i][j] != 0) {
+            let elemento = document.getElementById("p" + tabuleiro[i][j]);
+            //console.log("tabuleiro " + tabuleiro[i][j] + " na posição " + i + j);
+            
+            if (elemento) {
+                elemento.style.top = posiT[i][j] + 'px';
+                elemento.style.left = posiL[i][j] + 'px';
+            } else {
+                console.error("Elemento " + tabuleiro[i][j] + " não encontrado.");
             }
         }
-        
-        
     }
+}
+
+if (!sabioAzulMorto) {
+    console.error("Sabio Azul morreu.");
+    document.getElementById("redWinSabio").style.visibility='visible';
+}
+if (!sabioVermelhoMorto) {
+    console.error("sabio vermelho morreu.");
+    document.getElementById("blueWinSabio").style.visibility='visible';
+}
 
     // atualizar os cards, não consegui por um for, pq a concatenação de variaveis ficou muito dificil e nem o chatgpt conseguiu
 
@@ -312,7 +339,7 @@ function atualizarTabuleiro() {
                 cards(Variavel);
             };
     
-            console.log("Botão criado e desativado com imagem " + Variavel);
+            //console.log("Botão criado e desativado com imagem " + Variavel);
         } else {
             console.error('Div não encontrada.');
         }
@@ -342,36 +369,54 @@ document.getElementById('btnVoltar').disabled = false;
 }
 
 function voltar(){
-    ocultarbotoes();
+    
     document.getElementById('btnVoltar').disabled = true;
-    if(turno = 1){
+    // document.getElementById('cardsPlayer1-1-button').disabled = true;
+    // document.getElementById('cardsPlayer1-2-button').disabled = true;
+    // document.getElementById('cardsPlayer2-1-button').disabled = true;
+    // document.getElementById('cardsPlayer2-2-button').disabled = true;
+    // if(jogadoratual = 1){
         document.getElementById('cardsPlayer1-1-button').disabled = false;
         document.getElementById('cardsPlayer1-2-button').disabled = false;
-    }
-    if(turno = 2){
+     
+    // }
+    // if (jogadoratual = 2){
         document.getElementById('cardsPlayer2-1-button').disabled = false;
         document.getElementById('cardsPlayer2-2-button').disabled = false;
-    }
+        
+    // }
+    ocultarbotoes();
+    
 }
 
-
+let rodada = 0;
 function turnos(){
+    
+
+    atualizarTabuleiro();
+   ocultarbotoes();
+
     jogadoratual++;
     if(jogadoratual>2){
         jogadoratual = 1;
+        jogadorInimigo = 2;
     }
+
+    console.error("jogador atual na função turnos "+jogadoratual);
 document.getElementById('cardsPlayer1-1-button').disabled = true;
 document.getElementById('cardsPlayer1-2-button').disabled = true;
 document.getElementById('cardsPlayer2-1-button').disabled = true;
 document.getElementById('cardsPlayer2-2-button').disabled = true;
 
 if(jogadoratual == 1){
+    jogadorInimigo = 2;
     document.body.style.transition = 'background-color 0.5s ease';
     document.body.style.backgroundColor = '#508dc2'; 
     document.getElementById('cardsPlayer1-1-button').disabled = false;
     document.getElementById('cardsPlayer1-2-button').disabled = false;
 }
 if(jogadoratual == 2){
+    jogadorInimigo = 1;
     document.body.style.transition = 'background-color 0.5s ease';
     document.body.style.backgroundColor = '#c25050'; 
     //#c25050
@@ -391,7 +436,7 @@ function botoesPecas(player){
         let elemento = tabuleiro[i][j].toString(); 
       
         if (elemento.startsWith(player)) {
-            console.log(tabuleiro[i][j] + " ");
+          //  console.log(tabuleiro[i][j] + " ");
             // console.log("posição top " + posiT[i] + " posição left " + posiL[i]);
 
        document.getElementById("bt"+i+j).style.visibility='visible';
@@ -431,30 +476,55 @@ function premove(peça, L1,L2, cardAtual) {
             }              
 
                 let valoresmatriz = cardsMatrizP1[cardAtual][i];
-                console.log('valoresmatriz: ' + valoresmatriz);
+               // console.log('valoresmatriz: ' + valoresmatriz);
                 let MoveX = valoresmatriz[0];
                 let MoveY = valoresmatriz[1]; 
              
-                console.log('MoveX: ' + MoveX);
-                console.log('MoveY: ' + MoveY);
+                
+                // console.log('L1: ' + L1);//aqui é o lugar atual
+                // console.log('L2: ' + L2);
+                // console.log('MoveX: ' + MoveX); //aqui é pra onde vai
+                // console.log('MoveY: ' + MoveY);
+
+                
+
                
-                    console.log(bloco);
+                    //console.log(bloco);
     
                     let buttonId = 'bt' + (L1+ MoveX) + (L2+ MoveY);
                     
-                    console.log('buttonId: ' + buttonId);
+                   // console.log('buttonId: ' + buttonId);
                     let button = document.getElementById(buttonId);
-                    if (!button) {
+                    if (!button || tabuleiro[L1 + MoveX][L2 + MoveY].toString().startsWith(jogadoratual.toString())) {
                         continue
                     }
                     if (button) {
-                        button.style.backgroundColor = '#c25050';
+
+
+                        if (tabuleiro[L1 + MoveX][L2 + MoveY].toString().startsWith(jogadorInimigo.toString())) {
+                            button.classList.add('red-gradient');
+                            button.onclick = function() {
+                                captura(L1,L2,MoveX,MoveY);
+                            };
+                        }
+                        else{
+                            button.classList.add('blue-gradient');
+                            
+                            button.onclick = function() {
+                                movimento(L1,L2,MoveX,MoveY);
+                            };
+                        }
+
+                        
+                        
+                        //azul
+                        
                         button.style.visibility = 'visible';
                         button.style.zIndex = 10;
+
+
     
-                        button.onclick = function() {
-                            movimento();
-                        };
+                       
                     } else {
                         console.error('Botão não encontrado com o ID: ' + buttonId);
                     }
@@ -464,14 +534,45 @@ function premove(peça, L1,L2, cardAtual) {
     }
 }
 
+// function removerTransparencia(L1,L2,MoveX,MoveY){
+//     let buttonId = 'bt' + (L1+ MoveX) + (L2+ MoveY)
+//     console.log("buttonId transparencia "+buttonId)
+//     buttonId.style.backgroundColor = 'transparent';
+// }
 
 
-function movimento(){
+function movimento(L1,L2,MoveX,MoveY){
+    let peça = tabuleiro[L1][L2];
+    let destino = tabuleiro[L1 + MoveX][L2 + MoveY];
+    tabuleiro[L1 + MoveX][L2 + MoveY] = peça;
+    tabuleiro[L1][L2] = destino;
+    atualizarTabuleiro();
+    //voltar();
+    turnos();
+    
     console.log("movimento final realizado")
+    document.getElementById('btnVoltar').disabled = true;
+
+}
+function captura(L1,L2,MoveX,MoveY){
+    let peça = tabuleiro[L1][L2];
+    let destino = 0;
+
+   let elemento = document.getElementById("p"+tabuleiro[L1 + MoveX][L2 + MoveY]);
+   elemento.style.visibility='hidden';
+
+
+    tabuleiro[L1 + MoveX][L2 + MoveY] = peça;
+    tabuleiro[L1][L2] = destino;
+    atualizarTabuleiro();
+    //voltar();
+    console.log("captura realizada")
+    document.getElementById('btnVoltar').disabled = true;
+    turnos();
 
 }
 
 
 document.addEventListener('DOMContentLoaded', function() {
-    atualizarTabuleiro();
+    turnos();
 });

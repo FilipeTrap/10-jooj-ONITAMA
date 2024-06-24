@@ -199,3 +199,24 @@ left: 353px;
         left: 353px;
         }
     
+        .red-gradient {
+            background: linear-gradient(to right, rgba(194, 80, 80, 0.5), rgba(255, 255, 255, 0.5));
+        }
+        
+        .blue-gradient {
+            background: linear-gradient(to right, rgba(80, 80, 194, 0.5), rgba(255, 255, 255, 0.5));
+        }
+        
+        .transparent-background {
+            background: transparent;
+        }
+        
+.gameover{
+    position: absolute;
+    top: 5px;
+    left: 353px;
+}
+
+#btnVoltar{
+    
+}
