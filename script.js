@@ -12,8 +12,6 @@ let cartareserva = 'elephant';
 
 
 
-
-
 const posiT = [
     [-2, -2, -2, -2, -2],
     [87, 87, 87, 87, 87],
@@ -30,21 +28,20 @@ const posiL = [
     [-5, 85, 176, 266, 353]
 ];
 
-// var tabuleiro = [
-//     'v1', 'v2', 'vs', 'v3', 'v4',
-//     '', '', '', '', '',
-//     '', '', 'as', '', '',
-//     '', '', '', '', '',
-//     'a1', 'a2', '', 'a3', 'a4'
-// ];
 
+
+     
 let tabuleiro = [
-    [21, 22, 0, 23, 24],
-    [0, 0, 25, 0, 0],
-    [0, 0, 15, 0, 0],
-    [0, 12, 0, 13, 0],
-    [11, 0, 0, 0, 14]
+    [21, 22, 25, 23, 24],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [11, 12, 15, 13, 14]
   ];
+
+
+
+
 
   let testematriz = [
     [[-2,-2],[-2,-1],[-2,0],[-2,1],[-2,2]],
@@ -64,7 +61,7 @@ let tabuleiro = [
     dog: [[0,-1], [-1,-1],[1,-1], [0]],
     dragon: [[1,-1],[1,1], [-1,2], [-1,-2]],
     eel: [[1,-1], [-1,-1],[0,1], [0]],
-    elephant: [1, [0,-1], [-1,1], [-1,-1]],
+    elephant: [[0,1], [0,-1], [-1,1], [-1,-1]],
     fox: [[0,1], [-1,1],[1,1], [0]],
     frog: [[1,1], [0,-2], [-1,-1], [0]],
     giraffe: [[-1,-2], [-1,2],[1,0], [0]],
@@ -86,80 +83,45 @@ let tabuleiro = [
     seasnake: [[0,2],[1,-1], [-1,0], [0]],
     tanuki: [[1,-1], [-1,2], [-1,0], [0]],
     tiger: [[1,0], [-2,0], [0], [0], [0]],
-    tortle: [[0,2],[1,1], [0,-2],[1,-1]],
+    turtle: [[0,2],[1,1], [0,-2],[1,-1]],
     viper: [[1,1], [0,-2], [-1,0], [0], [0]]
 };
 
-
-// let cardsMatrizP1 = {
-//     bear: [-5, -6, 6, 0],
-//     boar: [-5, -1, 1, 0],
-//     cobra: [-1, -4, 6, 0],
-//     crab: [-5, -2, 2, 0],
-//     crane: [-5, 4, 6, 0],
-//     dog: [-1, -6, 4, 0],
-//     dragon: [4, 6, -3, -7],
-//     eel: [4, -6, 1, 0],
-//     elephant: [1, -1, -4, -6],
-//     fox: [1, -4, 6, 0],
-//     frog: [6, -2, -6, 0],
-//     giraffe: [-7, -3, 5, 0],
-//     goose: [-6, -1, 1, 6],
-//     horse: [-5, -1, 5, 0],
-//     iguana: [6, -5, -7, 0],
-//     kirin: [10, -9, -11, 0],
-//     mantis: [-4, -6, 5, 0],
-//     monkey: [6, 4, -4, -6],
-//     mouse: [4, 1, -5, 0],
-//     otter: [2, 6, -6, 0],
-//     ox: [1, 5, -5, 0],
-//     panda: [4, -4, -5, 0],
-//     phoenix: [2, -4, -2, -6],
-//     rabbit: [4, 2, -4, 0],
-//     rat: [6, -1, -5, 0],
-//     rooster: [4, -1, 1, -4],
-//     sable: [-4, -2, 4, 0],
-//     seasnake: [2, 4, -5, 0],
-//     tanuki: [4, -3, -5, 0],
-//     tiger: [5, -10, 0, 0],
-//     tortle: [2, 6, -2, 4],
-//     viper: [6, -2, -5, 0, 0]
-// };
-
 let cardsMatrizP2 = {
-    bear: [5, 6, -6, 0],
-    boar: [5, 1, -1, 0],
-    cobra: [1, 4, -6, 0],
-    crab: [5, 2, -2, 0],
-    crane: [5, -4, -6, 0],
-    dog: [1, 6, -4, 0],
-    dragon: [-4, -6, 3, 7],
-    eel: [-4, 6, -1, 0],
-    elephant: [-1, 1, 4, 6],
-    fox: [-1, 4, -6, 0],
-    frog: [-6, 2, 6, 0],
-    giraffe: [7, 3, -5, 0],
-    goose: [6, 1, -1, -6],
-    horse: [5, 1, -5, 0],
-    iguana: [-6, 5, 7, 0],
-    kirin: [-10, 9, 11, 0],
-    mantis: [4, 6, -5, 0],
-    monkey: [-6, -4, 4, 6],
-    mouse: [-4, -1, 5, 0],
-    otter: [-2, -6, 6, 0],
-    ox: [-1, -5, 5, 0],
-    panda: [-4, 4, 5, 0],
-    phoenix: [-2, 4, 2, 6],
-    rabbit: [-4, -2, 4, 0],
-    rat: [-6, 1, 5, 0],
-    rooster: [-4, 1, -1, 4],
-    sable: [4, 2, -4, 0],
-    seasnake: [-2, -4, 5, 0],
-    tanuki: [-4, 3, 5, 0],
-    tiger: [-5, 10, 0, 0],
-    tortle: [-2, -6, 2, -4],
-    viper: [-6, 2, 5, 0]
+    bear: [[1, 0], [1, 1], [-1, -1], [0]],
+    boar: [[1, 0], [0, 1], [0, -1], [0]],
+    cobra: [[0, 1], [1, -1], [-1, -1], [0]],
+    crab: [[1, 0], [0, 2], [0, -2], [0]],
+    crane: [[1, 0], [-1, 1], [-1, -1], [0]],
+    dog: [[0, 1], [1, 1], [-1, 1], [0]],
+    dragon: [[-1, 1], [-1, -1], [1, -2], [1, 2]],
+    eel: [[-1, 1], [1, 1], [0, -1], [0]],
+    elephant: [[0, -1], [0, 1], [1, -1], [1, 1]],
+    fox: [[0, -1], [1, -1], [-1, -1], [0]],
+    frog: [[-1, -1], [0, 2], [1, 1], [0]],
+    giraffe: [[1, 2], [1, -2], [-1, 0], [0]],
+    goose: [[1, 1], [0, 1], [0, -1], [-1, -1]],
+    horse: [[1, 0], [0, 1], [-1, 0], [0]],
+    iguana: [[-1, -1], [1, 0], [1, 2], [0]],
+    kirin: [[2, 1], [-2, 0], [2, -1], [0]],
+    mantis: [[1, -1], [1, 1], [-1, 0], [0]],
+    monkey: [[-1, -1], [-1, 1], [1, -1], [1, 1]],
+    mouse: [[-1, 1], [0, -1], [1, 0], [0]],
+    otter: [[0, -2], [-1, -1], [1, 1], [0]],
+    ox: [[0, -1], [-1, 0], [1, 0], [0]],
+    panda: [[-1, 1], [1, -1], [1, 0], [0]],
+    phoenix: [[0, -2], [1, -1], [0, 2], [1, 1]],
+    rabbit: [[-1, 1], [0, -2], [1, -1], [0]],
+    rat: [[-1, -1], [0, 1], [1, 0], [0]],
+    rooster: [[-1, 1], [0, 1], [0, -1], [1, -1]],
+    sable: [[1, -1], [0, 2], [-1, 1], [0]],
+    seasnake: [[0, -2], [-1, 1], [1, 0], [0]],
+    tanuki: [[-1, 1], [1, -2], [1, 0], [0]],
+    tiger: [[-1, 0], [2, 0], [0], [0], [0]],
+    turtle: [[0, -2], [-1, -1], [0, 2], [-1, 1]],
+    viper: [[-1, -1], [0, 2], [1, 0], [0], [0]]
 };
+
 
 
 let cardNames = [
@@ -193,7 +155,7 @@ let cardNames = [
     'seasnake',
     'tanuki',
     'tiger',
-    'tortle',
+    'turtle',
     'viper'
 ];
 
@@ -311,6 +273,7 @@ if (!sabioVermelhoMorto) {
     auxiliarAttCards(carta2player1,"cardsPlayer1-2")
     auxiliarAttCards(carta1player2,"cardsPlayer2-1")
     auxiliarAttCards(carta2player2,"cardsPlayer2-2")
+    auxiliarAttCards(cartareserva,"cardSolto");
 
 
     function auxiliarAttCards(Variavel, id) {
@@ -371,20 +334,7 @@ document.getElementById('btnVoltar').disabled = false;
 function voltar(){
     
     document.getElementById('btnVoltar').disabled = true;
-    // document.getElementById('cardsPlayer1-1-button').disabled = true;
-    // document.getElementById('cardsPlayer1-2-button').disabled = true;
-    // document.getElementById('cardsPlayer2-1-button').disabled = true;
-    // document.getElementById('cardsPlayer2-2-button').disabled = true;
-    // if(jogadoratual = 1){
-    //     document.getElementById('cardsPlayer1-1-button').disabled = false;
-    //     document.getElementById('cardsPlayer1-2-button').disabled = false;
-     
-    // }
-    // if (jogadoratual = 2){
-    //     document.getElementById('cardsPlayer2-1-button').disabled = false;
-    //     document.getElementById('cardsPlayer2-2-button').disabled = false;
-        
-    // }
+  
     turnos();
     ocultarbotoes();
     
@@ -404,7 +354,7 @@ function turnos(){
     atualizarTabuleiro();
    ocultarbotoes();
 
-    console.error("jogador atual na função turnos "+jogadoratual);
+    //console.error("jogador atual na função turnos "+jogadoratual);
 document.getElementById('cardsPlayer1-1-button').disabled = true;
 document.getElementById('cardsPlayer1-2-button').disabled = true;
 document.getElementById('cardsPlayer2-1-button').disabled = true;
@@ -432,6 +382,8 @@ if(jogadoratual == 2){
 function botoesPecas(player){
     
     console.log("jogador atual "+player);
+
+    
     
     for (let i = 0; i < tabuleiro.length; i++) {
         for (let j = 0; j < tabuleiro[1].length; j++) {
@@ -461,12 +413,22 @@ function botoesPecas(player){
 
 function premove(peça, L1,L2, cardAtual) {
 
+    ocultarbotoes();
+
     // console.log('peças: ' + peça);
     // console.log('local 1: ' + local1);
     // console.log('local 2: ' + local2);
     // console.log('cardAtual: ' + cardAtual);
+    let matriz;
 
-    let matriz = cardsMatrizP1[cardAtual];
+    if (jogadoratual == 1){
+        matriz = cardsMatrizP1[cardAtual];
+    }
+    else{
+        matriz = cardsMatrizP2[cardAtual];
+    }
+
+   
   
     if (matriz) {
         for (let i = 0; i < 4; i++) {
@@ -477,7 +439,17 @@ function premove(peça, L1,L2, cardAtual) {
                 continue
             }              
 
-                let valoresmatriz = cardsMatrizP1[cardAtual][i];
+                let valoresmatriz;
+
+                if (jogadoratual == 1){
+                     valoresmatriz = cardsMatrizP1[cardAtual][i];
+                }
+                else{
+                    valoresmatriz = cardsMatrizP2[cardAtual][i];
+                }
+
+
+
                // console.log('valoresmatriz: ' + valoresmatriz);
                 let MoveX = valoresmatriz[0];
                 let MoveY = valoresmatriz[1]; 
@@ -506,14 +478,14 @@ function premove(peça, L1,L2, cardAtual) {
                         if (tabuleiro[L1 + MoveX][L2 + MoveY].toString().startsWith(jogadorInimigo.toString())) {
                             button.classList.add('red-gradient');
                             button.onclick = function() {
-                                captura(L1,L2,MoveX,MoveY);
+                                captura(L1,L2,MoveX,MoveY,cardAtual);
                             };
                         }
                         else{
                             button.classList.add('blue-gradient');
                             
                             button.onclick = function() {
-                                movimento(L1,L2,MoveX,MoveY);
+                                movimento(L1,L2,MoveX,MoveY,cardAtual);
                             };
                         }
 
@@ -536,14 +508,36 @@ function premove(peça, L1,L2, cardAtual) {
     }
 }
 
-// function removerTransparencia(L1,L2,MoveX,MoveY){
-//     let buttonId = 'bt' + (L1+ MoveX) + (L2+ MoveY)
-//     console.log("buttonId transparencia "+buttonId)
-//     buttonId.style.backgroundColor = 'transparent';
-// }
 
 
-function movimento(L1,L2,MoveX,MoveY){
+function movimento(L1,L2,MoveX,MoveY,cardAtual){
+
+
+    if(cardAtual == carta1player1){
+        let cardauxiliar = carta1player1;
+        carta1player1 = cartareserva;
+        cartareserva = cardauxiliar;
+    }
+    if(cardAtual == carta2player1){
+        let cardauxiliar = carta2player1;
+        carta2player1 = cartareserva;
+        cartareserva = cardauxiliar;
+    }
+
+    if(cardAtual == carta1player2){
+        let cardauxiliar = carta1player2;
+        carta1player2 = cartareserva;
+        cartareserva = cardauxiliar;
+    }
+    if(cardAtual == carta2player2){
+        let cardauxiliar = carta2player2;
+        carta2player2 = cartareserva;
+        cartareserva = cardauxiliar;
+    }
+
+
+   
+
     let peça = tabuleiro[L1][L2];
     let destino = tabuleiro[L1 + MoveX][L2 + MoveY];
     tabuleiro[L1 + MoveX][L2 + MoveY] = peça;
@@ -557,7 +551,12 @@ function movimento(L1,L2,MoveX,MoveY){
     document.getElementById('btnVoltar').disabled = true;
 
 }
-function captura(L1,L2,MoveX,MoveY){
+function captura(L1,L2,MoveX,MoveY,cardAtual){
+
+    let cardauxiliar = cardAtual;
+    cardAtual = cartareserva;
+    cartareserva = cardauxiliar;
+
     let peça = tabuleiro[L1][L2];
     let destino = 0;
 
@@ -576,8 +575,28 @@ function captura(L1,L2,MoveX,MoveY){
 
 }
 
+//pra sortear as cartas 
+function assignRandomCards() {
+    let availableCards = [...cardNames];
 
-document.addEventListener('DOMContentLoaded', function() {
+    function getRandomCard() {
+        let randomIndex = Math.floor(Math.random() * availableCards.length);
+        let card = availableCards[randomIndex];
+        availableCards.splice(randomIndex, 1);
+        return card;
+    }
+
+    carta1player1 = getRandomCard();
+    carta2player1 = getRandomCard();
+    carta1player2 = getRandomCard();
+    carta2player2 = getRandomCard();
+    cartareserva = getRandomCard();
+ 
+}
+
+
+  document.addEventListener('DOMContentLoaded', function() {
+    assignRandomCards()
     jogadoratual++;
     turnos();
 });

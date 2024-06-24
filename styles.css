@@ -90,6 +90,7 @@ body {
     /* position: absolute;
     bottom: 2%;
     left: 5%; */
+    transform: rotate(180deg);
    
 }
 #cardsPlayer2-2 {
@@ -98,7 +99,7 @@ body {
     /* position: absolute;
     bottom: 24%;
     left: 5%; */
-   
+    transform: rotate(180deg);
 }
 
 #cardSolto {
@@ -107,6 +108,7 @@ body {
     
     top: 150px;
     position: relative;
+    transform: rotate(90deg);
     
 }
 
@@ -207,16 +209,19 @@ left: 353px;
             background: linear-gradient(to right, rgba(80, 80, 194, 0.5), rgba(255, 255, 255, 0.5));
         }
         
-        .transparent-background {
-            background: transparent;
-        }
-        
 .gameover{
     position: absolute;
     top: 5px;
     left: 353px;
 }
 
-#btnVoltar{
-    
+#btnVoltar {
+    background-image: url('./assets/voltar.png'); 
+    width: 150px;
+    height: 150px; 
+    background-size: cover; /* ou 'contain' dependendo do efeito desejado */
+    background-position: center; 
+    background-repeat: no-repeat;
+    border: none; /* Remover a borda padrão do botão, se necessário */
+    outline: none; /* Remover o outline padrão do botão, se necessário */
 }
