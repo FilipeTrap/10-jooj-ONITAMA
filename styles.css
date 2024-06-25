@@ -7,14 +7,17 @@ body {
     background-color: #ffffff;
     transition: background-color 0.5s ease;
     overflow: hidden;
+    
 }
 
 #tudo {
-    width: 100vw; /* 100% da largura da tela */
-    height: 100vh; /* 100% da altura da tela */
-    overflow: auto; /* Garante que o conteúdo que ultrapassa a tela seja rolável */
-    box-sizing: border-box; /* Inclui padding e border no tamanho total do elemento */
+    width: auto;
+    height: 100vh;
+    overflow: auto;
+    box-sizing: border-box;
+    padding-left: 120px; /* Adiciona um espaço de 50px ao lado esquerdo */
 }
+
 
 
 .container {
@@ -25,6 +28,7 @@ body {
     border: 2px solid #333;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
+
   
 }
 
@@ -235,11 +239,13 @@ transition: all 0.3s ease;
 
 #btnVoltar {
     background-image: url('./assets/voltar.png'); 
-    width: 150px;
-    height: 150px; 
-    background-size: cover; /* ou 'contain' dependendo do efeito desejado */
+    width: 127px;
+    height: 118px;
+    background-size: cover; 
     background-position: center; 
     background-repeat: no-repeat;
-    border: none; /* Remover a borda padrão do botão, se necessário */
-    outline: none; /* Remover o outline padrão do botão, se necessário */
+    position: relative;
+    top: -403px;
+    left: -128px;
+
 }
