@@ -9,6 +9,14 @@ body {
     overflow: hidden;
 }
 
+#tudo {
+    width: 100vw; /* 100% da largura da tela */
+    height: 100vh; /* 100% da altura da tela */
+    overflow: auto; /* Garante que o conteúdo que ultrapassa a tela seja rolável */
+    box-sizing: border-box; /* Inclui padding e border no tamanho total do elemento */
+}
+
+
 .container {
     background-image: url('./assets/tabuleiro.png'); 
     display: flex;
